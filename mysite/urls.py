@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include, url
+from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('blog.urls')),
 ]
+
+"""
+
+Django теперь будет перенаправлять все запросы 'http://127.0.0.1:8000/' к blog.urls и искать там дальнейшие инструкции.
+
+"""
