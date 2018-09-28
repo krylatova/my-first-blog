@@ -5,24 +5,29 @@
     <title>Мой блог</title>
 </head>
 <body>
-  <h1> Как оно?</h1>
-  <p><img src="https://i0.wp.com/olejack.ru/wp-content/uploads/2012/11/Owncloud-300x300.png?resize=300%2C300&ssl=1"></p>
-
-  <div>
-    <h1> Новый раздел </h1>
-  </div>
-
-  <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-  </div>
+<center>
+    <h1> <font size="5" color="Blue" face="Cambria">Оригинальные идеи для особенного настроения</font></h1>
+    <p>или как порадовать себя и других</p>
+    <p><img src="https://24smi.org/public/media/2017/5/26/01_4rEWYL8.jpg"></p>
+</center>
 
   <div>
             <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
+            <h2><a href="">Пост написанный на коде</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
   </div>
+
+<HR>
+
+<h1>Записи из базы данных, введенные через панель администрирования</h1>
+<HR>
+{% for post in posts %}
+    <div>
+        <p><em>published: {{ post.published_date }}</em></p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 
 </body>
 </html>
